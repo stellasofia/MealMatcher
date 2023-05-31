@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/styles.css">
+    <link rel="stylesheet" href="public/css/styles.css">    
     <script src="public/js/index.js"></script>
-    <title>Document</title>
+
+    <title>Search Recipe</title>
 </head>
 <body>
-    
-<h1>hi</h1>
+    <div class="container"> 
+        <h1>Search Recipe</h1>
+        <form action='/recipes?query=${document.getElementById(test).textContent}'>
+            <input id="test" type="text" name="query" placeholder="Search">
+            <button type="submit" onclick="searchRecipe(document.getElementById(test).textContent)">Search Recipe</button>
+        </form>
+     
+    </div>
 </body>
 </html>
