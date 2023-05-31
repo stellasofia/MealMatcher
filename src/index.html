@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/styles.css">    
-    <script src="public/js/index.js"></script>
 
-    <title>Search Recipe</title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="public/css/styles.css">
+  <script src="public/js/index.js"></script>
+
+  <title>Search Recipe</title>
 </head>
+
 <body>
-    <div class="container"> 
-        <h1>Search Recipe</h1>
-        <form action='/recipes?query=${document.getElementById(test).textContent}'>
-            <input id="test" type="text" name="query" placeholder="Search">
-            <button type="submit" onclick="searchRecipe(document.getElementById(test).textContent)">Search Recipe</button>
-        </form>
-     
-    </div>
+  <div class="container">
+    <h1>Search Recipe</h1>
+    <form action='/recipes?query=${document.getElementById(test).textContent}'>
+      <input id="test" type="text" name="query" placeholder="Search">
+    </form>
+    <button type="submit" onclick="searchRecipe()">Search Recipe</button>
+
+  </div>
 </body>
+
 </html>
