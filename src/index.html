@@ -13,13 +13,46 @@
 
 <body>
   <div class="container">
-    <h1>Search Recipe</h1>
-    <form action='/recipes?query=${document.getElementById(test).textContent}'>
-      <input id="test" type="text" name="query" placeholder="Search">
-    </form>
-    <button type="submit" onclick="searchRecipe()">Search Recipe</button>
+
+    <header class="header">
+      <h1>MealMatcher</h1>
+    </header>
+
+    <nav> 
+      <h2>Search Recipe</h2>
+      <form action='/recipes?query=${document.getElementById(test).textContent}'>
+        <input id="test" type="text" name="query" placeholder="Search">
+      </form>
+      <button type="submit" onclick="searchRecipe()">Search Recipe</button>
+    </nav>
 
   </div>
+
+
+  <main> 
+
+  </main>
+
+
+  <div class="recipe--container">
+    <div class="recipe--header">
+      <p class="recipe--name">Strawberry</p>
+    </div>
+    <div class="recipe--content">
+      <img class="recipe--image" src="./strawberry.jpg">
+    </div>
+  </div>
+
+   <footer class="footer">
+      <ul>
+        <li>© MealMatcher!</li>
+        <li>―</li>
+        <li><a href="mailto:">send us an email!</a></li>
+        <li>―</li>
+        <li><a href="https://www.fh-campuswien.ac.at/" target="_blank">Visit our UAS!</a></li>  
+      </ul>
+    </footer>
+
 </body>
 
 </html>
