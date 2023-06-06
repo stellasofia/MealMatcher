@@ -1,6 +1,5 @@
 //Wird grad nicht gebraucht
 
-
 fetch('/recipes')
   .then(response => response.json())
   .then(recipes => {
