@@ -5,53 +5,167 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- font awsome cdn link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- custom css file link -->
   <link rel="stylesheet" href="public/css/styles.css">
+
   <script src="public/js/index.js"></script>
 
   <title>Search Recipe</title>
 </head>
 
 <body>
-  <div class="container">
 
-    <header class="header">
-      <h1>MealMatcher</h1>
-    </header>
 
-    <nav> 
-      <h2>Search Recipe</h2>
-      <form action='/recipes?query=${document.getElementById(test).textContent}'>
-        <input id="test" type="text" name="query" placeholder="Search">
-      </form>
-      <button type="submit" onclick="searchRecipe()">Search Recipe</button>
+  <!-- header section -->
+
+  <header>
+    <a href="#" class="logo">MealMatcher <span>.</span></a>
+
+    <nav class="navbar">
+      <a href="#home">home</a>
+      <a href="#recipes">recipes</a>
+      <!-- <a href="createRecipes">create Recipes</a>   ADD LATER!!! -->
+      <a href="#tipps">tipps</a>
     </nav>
 
-  </div>
+    <div class="icons">
+      <a href="favorites.html" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-user"></a>
+    </div>
+  </header>
 
 
-  <main> 
+
+  <!-- home section -->
+
+  <section class="home" id="home">
+
+    <div class="content">
+
+      <h3>Find a Recipe</h3>
+      <form action='/recipes?query=${document.getElementById(test).textContent}'>
+        <input class="search" id="search" type="text" name="query" placeholder="  ">
+      </form>
+      <button type="submit" onclick="searchRecipe()" class="btn">Search Recipe</button>
+
+    </div>
+
+  </section>
+
+
+
+  <!--  recipe section -->
+
+  <main class="recipes" id="recipes">
+    <h1 class="heading"> recipe <span>results</span> </h1>
+
+    <div class="box-container" id="box-container">
+
+      <div class="box">
+        <div class="image">
+          <img src="img/strawberry.jpg" alt="">
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="getDetails-btn">get details</a>
+          </div>
+        </div>
+        <div class="content">
+          <h3>strawberry1</h3>
+        </div>
+      </div>
+
+
+      <div class="box">
+        <div class="image">
+          <img src="img/strawberry.jpg" alt="">
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="getDetails-btn">get details</a>
+          </div>
+        </div>
+        <div class="content">
+          <h3>strawberry2</h3>
+        </div>
+      </div>
+
+
+      <div class="box">
+        <div class="image">
+          <img src="img/strawberry.jpg" alt="">
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="getDetails-btn">get details</a>
+          </div>
+        </div>
+        <div class="content">
+          <h3>strawberry3</h3>
+        </div>
+      </div>
+
+
+      <div class="box">
+        <div class="image">
+          <img src="img/strawberry.jpg" alt="">
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="getDetails-btn">get details</a>
+          </div>
+        </div>
+        <div class="content">
+          <h3>strawberry4</h3>
+        </div>
+      </div>
+
+    </div>
 
   </main>
 
 
-  <div class="recipe--container">
-    <div class="recipe--header">
-      <p class="recipe--name">Strawberry</p>
-    </div>
-    <div class="recipe--content">
-      <img class="recipe--image" src="./strawberry.jpg">
-    </div>
-  </div>
+  <!--  tipps section -->
 
-   <footer class="footer">
-      <ul>
-        <li>© MealMatcher!</li>
-        <li>―</li>
-        <li><a href="mailto:">send us an email!</a></li>
-        <li>―</li>
-        <li><a href="https://www.fh-campuswien.ac.at/" target="_blank">Visit our UAS!</a></li>  
-      </ul>
-    </footer>
+  <section class="tipps" id="tipps">
+    <h1 class="heading"> recipe <span>tipps</span> </h1>
+    <p> I thought of maybe using a different API to let us display different cooking tipps or whaterver</p>
+  </section>
+
+
+
+  <!-- footer section -->
+
+  <section class="footer">
+
+    <div class="box-container">
+
+      <div class="box">
+        <h3>quick links</h3>
+        <a href="#">home</a>
+        <a href="#">recipes</a>
+        <a href="#">tipps</a>
+      </div>
+
+      <div class="box">
+        <h3>extra links</h3>
+        <a href="favorites.html">favorites</a>
+        <a href="#">account</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <footer>
+    <ul>
+      <li>© MealMatcher!</li>
+      <li>―</li>
+      <li><a href="mailto:">send us an email!</a></li>
+      <li>―</li>
+      <li><a href="https://www.fh-campuswien.ac.at/" target="_blank">Visit our UAS!</a></li>
+    </ul>
+  </footer>
 
 </body>
 

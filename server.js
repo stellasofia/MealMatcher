@@ -30,7 +30,7 @@ app.get('recipe/:id', async(req, res) => {
 app.get('/recipes', async(req, res) => {
     const query = req.query.query; 
     console.log(query);
-    const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=${key_api}`);
+    const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=16&apiKey=${key_api}`);
     const recipes = response.data.results;
     res.send(recipes);
      
