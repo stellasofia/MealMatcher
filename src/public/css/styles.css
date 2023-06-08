@@ -140,6 +140,14 @@ header .icons a:hover{
   color: green;
 }
 
+.box-container {
+  justify-content: center;
+}
+
+.box {
+  max-width: 300px;
+}
+
 .recipes .box-container{
   display: flex;
   flex-wrap: wrap;

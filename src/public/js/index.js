@@ -1,4 +1,21 @@
+function addFavorite(recipe) {
+  fetch("/addFavorite",
+    {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(recipe)
+    }).then(response => {
+
+      const recipeContainer = document.getElementById(recipe.id)
+      recipeContainer.remove()
+    })
+}
+
 function searchRecipe() {
+
   let input = document.getElementById("search").value
   console.log(input)
   //Wird grad nicht gebrauch
@@ -28,18 +45,22 @@ function searchRecipe() {
 
         img.src = recipe.image;
         h3.textContent = recipe.title;
+        divBox.setAttribute("id", recipe.id);
         divBox.className = "box";
+
         divImage.className = "image";
         divIcons.className = "icons"
         divContent.className = "content"
         img.alt = "";
-        heartIcon.href = "#";
+        heartIcon.addEventListener("click", () => {
+          addFavorite(recipe);
+        })
         heartIcon.className = "fas fa-heart";
         getDetailsLink.href = "#";
         getDetailsLink.className = "getDetails-btn";
         getDetailsLink.textContent = "get details";
-       
-       
+
+
         mainElement.append(divBox);
         divBox.append(divImage, divContent);
         divImage.append(img, divIcons);
@@ -53,7 +74,4 @@ function searchRecipe() {
       // Handle any errors
       console.error(error);
     });
-
-
-
 }
