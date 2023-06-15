@@ -19,14 +19,19 @@
 
 <body>
 
-    <form> 
+    <form>
         <input type="hidden" id="id" />
-        <div><label for="Title">Title</label><input type="text" id="Title" /></div>
         <div>
-            <button type="button" onclick="putRecipe()">Save</button>
-            <button type="button" onclick="location.href = 'index.html'">Cancel</button>
-          </div>
-    </form>
+          <label for="title">Title</label><input type="text" id="title" />
+        </div>
+        <div>
+          <label for="image">Image</label><input type="text" id="image" />
+        </div>
+        <div>
+          <button type="button" onclick="putRecipe()">Save</button>
+          <button type="button" onclick="location.href = 'index.html'">Cancel</button>
+        </div>
+      </form>
 
 </body>
 

@@ -69,6 +69,20 @@ app.delete("/deleteFavorite", async (req, res) => {
   res.sendStatus(200)
 })
 
+app.get("/getRecipeInfo", async (req, res) => {
+  id = req.query.id
+  const response = favorites[id]
+  res.send(response)
+})
+
+app.put("/updateRecipeInfo", async (req, res) => {
+  id = req.query.id
+  favorites[id].title = req.body.title
+  favorites[id].image = req.body.image
+
+  res.sendStatus(200)
+})
+
 
 app.listen(3001, () => {
   console.log('Server running on port 3001');

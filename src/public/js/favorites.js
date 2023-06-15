@@ -49,7 +49,7 @@ function deleteFavorite(recipe) {
             deleteFavorite(recipe);
           })
           deleteIcon.className = "fa fa-trash";
-          editDetails.href = "/edit.html";
+          editDetails.href = `/edit.html?id=${recipe.id}`;
           editDetails.className = "getDetails-btn";
           editDetails.textContent = "Edit details";
           
@@ -68,4 +68,7 @@ function deleteFavorite(recipe) {
         console.error(error);
       });
   }
-  renderFavorties()
+
+  window.onload = function() {
+    renderFavorties()
+  }
