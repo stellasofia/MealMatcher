@@ -208,15 +208,21 @@ section {
 
 
 /* --- TIPPS SECTION - MAIN PAGE --- */
-.tipps {
-  box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
-  border-radius: .5rem;
+
+.tips {
+  font-size: 20px;
 }
 
-.tipps p {
-  font-size: 3rem;
+.quote-card.green-card {
+  background: rgb(60, 184, 116);
+  color: #ffffff;
+  box-shadow: 0 1px 2px rgba(34, 34, 34, 0.12), 0 2px 4px rgba(34, 34, 34, 0.24);
 }
 
+.quote-card.green-card:before,
+.quote-card.green-card:after {
+  color: #59E063;
+}
 
 /* --- Log In Page --- */
 

@@ -11,8 +11,8 @@ const key_api = 'ff9c2c48de514451bba22bb3017484c5'
 const key_api2 = 'b9626a5b5716476da85bed6e7fba5387'
 
 
-
 const bodyParser = require("body-parser");
+const req = require('express/lib/request');
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "src")));
@@ -66,7 +66,7 @@ app.put("/recipeInfo", function (req, res) {
 */
 
 app.post("/addFavorite", async (req, res) => {
-    favorites[req.body.id] = req.body;
+  favorites[req.body.id] = req.body;
 })
 
 app.delete("/deleteFavorite", async (req, res) => {
@@ -88,17 +88,30 @@ app.put("/updateRecipeInfo", async (req, res) => {
   res.sendStatus(200)
 })
 
+// --- TIPPS --- //
+app.get('/tips', (req, res) => {
+  axios.get(`https://api.spoonacular.com/food/trivia/random?apiKey=${key_api}`)
+    .then(response => {
+      const cookingTip = response.data.text;
+      res.send(cookingTip);
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).send('Error retrieving cooking tip');
+    });
+});
+
 // --- SESSION MANAGEMENT ---
 const sessions = [];
 const users = [];
 let nextUserId = 1;
 let sessionCount = 1;
 
-app.get("/users", async (req, res) =>{
+app.get("/users", async (req, res) => {
   res.json(users);
 })
 
-app.get("/sessions", async (req,res) =>{
+app.get("/sessions", async (req, res) => {
   res.json(sessions);
 })
 
@@ -142,21 +155,21 @@ app.post("/login", async (req, res) => {
 })
 
 app.post("/register", async (req, res) => {
-  const {username, password} = req.body;
+  const { username, password } = req.body;
   const userId = nextUserId++;
 
-try{
-  const hashedPassword = await bcrypt.hash(password, 5)
-  const newUser = {
-    userId,
-    username,
-    hashedPassword,
+  try {
+    const hashedPassword = await bcrypt.hash(password, 5)
+    const newUser = {
+      userId,
+      username,
+      hashedPassword,
+    }
+    users.push(newUser)
+    res.send(newUser)
+  } catch {
+    res.status(500)
   }
-  users.push(newUser)
-  res.send(newUser)
-} catch{
-  res.status(500)
-}
 })
 
 app.post("/logout", (req, res) => {

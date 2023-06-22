@@ -5,18 +5,18 @@ function addFavorite(recipe) {
 
   if (sessionId) {
     fetch("/addFavorite",
-        {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(recipe)
-        }).then(response => {
+      {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(recipe)
+      }).then(response => {
 
-      const recipeContainer = document.getElementById(recipe.id)
-      recipeContainer.remove()
-    })
+        const recipeContainer = document.getElementById(recipe.id)
+        recipeContainer.remove()
+      })
 
   } else {
     // Session doesn't exist, redirect to login.html
@@ -117,5 +117,24 @@ function searchRecipe() {
     .catch(error => {
       // Handle any errors
       console.error(error);
+    });
+
+}
+
+// --- TIPS SECTION --- //
+
+document.addEventListener("DOMContentLoaded", function() {
+  getTips();
+});
+
+function getTips() {
+  fetch('/tips') // Replace with your API endpoint
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('tipsParagraph').textContent = data;
+    })
+    .catch(error => {
+      console.error('Failed to fetch data:', error);
+      document.getElementById('tipsParagraph').textContent = 'Failed to fetch data.';
     });
 }

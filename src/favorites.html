@@ -70,16 +70,50 @@
 
     <!-- footer section -->
 
-    <footer>
-        <ul>
-            <li>© MealMatcher!</li>
-            <li>―</li>
-            <li><a href="mailto:">send us an email!</a></li>
-            <li>―</li>
-            <li><a href="https://www.fh-campuswien.ac.at/" target="_blank">Visit our UAS!</a></li>
+  <!-- footer section -->
+
+  <div class="container">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md-2 mb-3">
+          <h4>Quick Links</h4>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-body-secondary">Home</a></li>
+            <li class="nav-item mb-2"><a href="index.html#recipes" class="nav-link p-0 text-body-secondary">Recipes</a></li>
+            <li class="nav-item mb-2"><a href="index.html#tipps" class="nav-link p-0 text-body-secondary">Tipps</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 offset-md-2 mb-11">
+          <form>
+            <h4>Subscribe to our newsletter</h4>
+            <p class="newsletter-text">Monthly digest of new and exciting recipes.</p>
+            <div class="d-flex flex-column flex-sm-row gap-2">
+              <label for="newsletter1" class="visually-hidden">Email address</label>
+              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+              <button class="btn btn-success subscribe-btn" type="button">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="rights d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p>© 2023 Company, Inc. All rights reserved.</p>
+        <ul class="list-unstyled d-flex">
+          <li class="nav-item me-3 me-lg-2">
+            <a class="nav-link" href="http://www.instagram.com/stellaxsofia/"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li class="nav-item me-3 me-lg-2">
+            <a class="nav-link" href="http://www.twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li class="nav-item me-3 me-lg-2">
+            <a class="nav-link" href="http://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+          </li>
         </ul>
+      </div>
     </footer>
-    <script src="public/js/login.js"></script>
+  </div>
+  
 </body>
 
 </html>
