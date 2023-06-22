@@ -1,18 +1,62 @@
+
+
 function addFavorite(recipe) {
-  fetch("/addFavorite",
-    {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(recipe)
-    }).then(response => {
+  const sessionId = getCookie("session");
+
+  if (sessionId) {
+    fetch("/addFavorite",
+        {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(recipe)
+        }).then(response => {
 
       const recipeContainer = document.getElementById(recipe.id)
       recipeContainer.remove()
     })
+
+  } else {
+    // Session doesn't exist, redirect to login.html
+    window.location.href = "login.html";
+  }
+
+
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const favoritesButton = document.querySelector(".nav-link");
+  favoritesButton.addEventListener("click", handleFavoritesClick);
+});
+
+function handleFavoritesClick(event) {
+  event.preventDefault();
+
+  const sessionId = getCookie("session");
+  if (sessionId) {
+    // Session exists, redirect to favorites.html
+    window.location.href = "favorites.html";
+  } else {
+    // Session doesn't exist, redirect to login.html
+    window.location.href = "login.html";
+  }
+}
+
+// Helper function to get the value of a cookie by name
+function getCookie(name) {
+  const cookieString = document.cookie;
+  const cookies = cookieString.split("; ");
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].split("=");
+    if (cookie[0] === name) {
+      return cookie[1];
+    }
+  }
+  return "";
+}
+
 
 function searchRecipe() {
 

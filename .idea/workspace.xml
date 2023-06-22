@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cc17e3f-196e-4a6c-a47e-b6d993796a96" name="Changes" comment="-v1.2">
+    <list default="true" id="8cc17e3f-196e-4a6c-a47e-b6d993796a96" name="Changes" comment="v.8 - Login,Registration working">
+      <change afterPath="$PROJECT_DIR$/src/public/js/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/favorites.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +23,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -35,18 +41,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="-v1.2">
@@ -64,6 +71,9 @@
       <updated>1686421300252</updated>
       <workItem from="1686421301486" duration="668000" />
       <workItem from="1687092614036" duration="22454000" />
+      <workItem from="1687272206275" duration="627000" />
+      <workItem from="1687298824087" duration="20000" />
+      <workItem from="1687359700251" duration="13803000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -76,7 +86,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -84,6 +106,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-v1.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="-v1.2" />
+    <MESSAGE value="v.8 - Login,Registration working" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.8 - Login,Registration working" />
   </component>
 </project>

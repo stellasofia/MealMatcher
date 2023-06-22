@@ -66,7 +66,7 @@ app.put("/recipeInfo", function (req, res) {
 */
 
 app.post("/addFavorite", async (req, res) => {
-  favorites[req.body.id] = req.body
+    favorites[req.body.id] = req.body;
 })
 
 app.delete("/deleteFavorite", async (req, res) => {
@@ -111,13 +111,15 @@ app.post("/login", async (req, res) => {
     if (!user) {
       return res.status(401).send("Invalid username or password");
     }
+
     const passwordMatch = await bcrypt.compare(password, user.hashedPassword);
+
     if (!passwordMatch) {
       return res.status(401).send("Invalid username or password");
     }
 
-
     const existingSession = sessions.find((session) => session.userId === user.userId);
+
     if (existingSession) {
       res.cookie("session", existingSession.sessionId);
     } else {
