@@ -88,7 +88,7 @@ app.put("/updateRecipeInfo", async (req, res) => {
   res.sendStatus(200)
 })
 
-// --- TIPPS --- //
+// --- TIPS --- //
 app.get('/tips', (req, res) => {
   axios.get(`https://api.spoonacular.com/food/trivia/random?apiKey=${key_api}`)
     .then(response => {
