@@ -1,5 +1,3 @@
-
-
 function addFavorite(recipe) {
   const sessionId = getCookie("session");
 
@@ -86,12 +84,10 @@ function searchRecipe() {
         const divContent = document.createElement("div");
         const h3 = document.createElement("h3");
 
-
         img.src = recipe.image;
         h3.textContent = recipe.title;
         divBox.setAttribute("id", recipe.id);
         divBox.className = "box";
-
         divImage.className = "image";
         divIcons.className = "icons"
         divContent.className = "content"
@@ -100,10 +96,9 @@ function searchRecipe() {
           addFavorite(recipe);
         })
         heartIcon.className = "fas fa-heart";
-        getDetailsLink.href = "#";
+        //getDetailsLink.href = "recipe.html?id" + recipe.id;
         getDetailsLink.className = "getDetails-btn";
         getDetailsLink.textContent = "get details";
-
 
         mainElement.append(divBox);
         divBox.append(divImage, divContent);
@@ -112,6 +107,7 @@ function searchRecipe() {
         divContent.append(h3);
 
         console.log(recipe)
+
       });
     })
     .catch(error => {
@@ -121,9 +117,39 @@ function searchRecipe() {
 
 }
 
+// --- RECIPE SEARCH --- //
+
+function getRecipeDetails(recipeId) {
+  fetch(`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=ff9c2c48de514451bba22bb3017484c5`)
+    .then(response => response.json())
+    .then(data => {
+      // Hier können Sie den Code hinzufügen, um die Daten auf Ihrer Webseite anzuzeigen
+      // Zum Beispiel:
+      const mainElement = document.getElementById("box-container2");
+      mainElement.innerHTML = `
+      <h2>${data.title}</h2>
+      <img src="${data.image}" alt="${data.title}">
+      <h3>Ingredients:</h3>
+      <ul>
+        ${data.extendedIngredients.map(ingredient => `<li>${ingredient.original}</li>`).join('')}
+      </ul>
+      <h3>Instructions:</h3>
+      <p>${data.instructions}</p>
+    `;
+    });
+}
+
+document.addEventListener('click', event => {
+  if (event.target.matches('.getDetails-btn')) {
+    const recipeId = event.target.closest('.box').id;
+    getRecipeDetails(recipeId);
+  }
+});
+
+
 // --- TIPS SECTION --- //
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   getTips();
 });
 

@@ -204,24 +204,16 @@ section {
   color: #333;
 }
 
-
-
+#box-container2 {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
 /* --- TIPPS SECTION - MAIN PAGE --- */
 
-.tips {
-  font-size: 20px;
-}
-
-.quote-card.green-card {
-  background: rgb(60, 184, 116);
-  color: #ffffff;
-  box-shadow: 0 1px 2px rgba(34, 34, 34, 0.12), 0 2px 4px rgba(34, 34, 34, 0.24);
-}
-
-.quote-card.green-card:before,
-.quote-card.green-card:after {
-  color: #59E063;
+.textbox {
+  /*filter:brightness(0.7);*/
 }
 
 /* --- Log In Page --- */

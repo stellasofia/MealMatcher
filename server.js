@@ -24,14 +24,6 @@ app.get('/', (req, res) => {
   res.sendStatus(202);
 });
 
-/*
-app.get('recipe/:id', async (req, res) => {
-  const { id } = req.params;
-  const response = await axios.get(`https://api.spoonacular.com/recipes/${id}/information&apiKey=${key_api}`);
-  const recipe = response.data;
-  res.send(recipe);
-})
-*/
 
 // --- 
 app.get('/recipes', async (req, res) => {
@@ -43,10 +35,29 @@ app.get('/recipes', async (req, res) => {
 
 });
 
+app.get('/instructions/:id', async (req, res) => {
+  const id = req.params.id;
+  const response = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${key_api}`);
+  const instructions = response.data;
+  res.send(instructions);
+});
+
+
+
+/*
+app.get("/recipeInfo", async (req, res) => {
+  const id = req.query.id;
+  const response = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${key_api}`);
+  const recipeInfo = response.data;
+  res.send(recipeInfo);
+});
+*/
+
+
+/*
 app.get("/favorites", async (req, res) => {
   res.send(favorites)
 })
-
 /*
 
 app.get("/recipeInfo", function (req, res) {
@@ -100,6 +111,7 @@ app.get('/tips', (req, res) => {
       res.status(500).send('Error retrieving cooking tip');
     });
 });
+
 
 // --- SESSION MANAGEMENT ---
 const sessions = [];
