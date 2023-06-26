@@ -183,24 +183,53 @@ function searchRecipe() {
 // --- RECIPE SEARCH --- //
 
 function getRecipeDetails(recipeId) {
-  fetch(`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=ff9c2c48de514451bba22bb3017484c5`)
+  fetch(`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=de7eb05287aa4681a5a7224d5d7527c8`)
     .then(response => response.json())
     .then(data => {
-      // Hier können Sie den Code hinzufügen, um die Daten auf Ihrer Webseite anzuzeigen
-      // Zum Beispiel:
+
       const mainElement = document.getElementById("box-container2");
-      mainElement.innerHTML = `
-      <h2>${data.title}</h2>
-      <img src="${data.image}" alt="${data.title}">
-      <h3>Ingredients:</h3>
-      <ul>
-        ${data.extendedIngredients.map(ingredient => `<li>${ingredient.original}</li>`).join('')}
-      </ul>
-      <h3>Instructions:</h3>
-      <p>${data.instructions}</p>
-    `;
+      // Löscht vorhandene Inhalte des mainElement
+      mainElement.innerHTML = '';
+
+      const titleElement = document.createElement("h2");
+      titleElement.className = "titleElement";
+      titleElement.textContent = data.title;
+      mainElement.appendChild(titleElement);
+
+      const imageElement = document.createElement("img");
+      imageElement.className = "imageElement";
+      imageElement.src = data.image;
+      mainElement.appendChild(imageElement);
+
+      const ingredientsElement = document.createElement("div");
+      ingredientsElement.className = "ingredientsElement";
+      mainElement.appendChild(ingredientsElement);
+
+      const ingredientsTitle = document.createElement("h3");
+      ingredientsTitle.className = "ingredientsTitle"
+      ingredientsTitle.textContent = "Ingredients:";
+      ingredientsElement.appendChild(ingredientsTitle);
+
+      const ulElement = document.createElement("ul");
+      ingredientsElement.appendChild(ulElement);
+
+      data.extendedIngredients.forEach(ingredient => {
+        const liElement = document.createElement("li");
+        liElement.textContent = ingredient.original;
+        ulElement.appendChild(liElement);
+      });
+
+      const instructionsElement = document.createElement("div");
+      instructionsElement.className = "instructionsElement";
+      mainElement.appendChild(instructionsElement);
+
+      data.analyzedInstructions[0].steps.forEach(step => {
+        const stepElement = document.createElement("p");
+        stepElement.textContent = step.step;
+        instructionsElement.appendChild(stepElement);
+      });
     });
-}
+};
 
 document.addEventListener('click', event => {
   if (event.target.matches('.getDetails-btn')) {
@@ -227,3 +256,6 @@ function getTips() {
       document.getElementById('tipsParagraph').textContent = 'Failed to fetch data.';
     });
 }
+
+
+// --- COCKTAIL SECTION --- //

@@ -30,8 +30,11 @@ header .navbar a:hover {
 }
 
 header .navbar-expand {
-  background: rgba(255, 255, 255, 0.81);
+  background: rgba(228, 224, 224, 0.589);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
 }
+
 
 header .the-blur {
   position: fixed;
@@ -46,8 +49,8 @@ header .the-blur {
   -o-filter: blur(20px);
   -ms-filter: blur(20px);
   filter: blur(20px);
-
 }
+
 
 /*  --- FIRST SECTION - MAIN PAGE --- */
 
@@ -56,19 +59,59 @@ section {
 }
 
 
+.home .recipe-text {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #fff;
+  font-weight: bold;
+
+  position: relative;
+  width: 210px;
+  margin: 5px auto;
+  background-color: #fff;
+  text-align: center;
+  line-height: 1.5em;
+  overflow: hidden;
+
+  color: #fff;
+  background-color: #000;
+
+  padding: 0.225rem 0.5rem;
+
+  /* Needs prefixing */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+@supports(mix-blend-mode: lighten) {
+
+  .home .recipe-text::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background: linear-gradient(60deg, #155a2a, #1cce60);
+
+    mix-blend-mode: lighten;
+  }
+
+}
+
 .home {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: url(../../img/search-background.jpeg) no-repeat;
+  background: url(../../img/food-blurred2.png) no-repeat;
+
   background-size: cover;
   background-position: center;
   text-align: center;
   box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.2);
   border-radius: .5rem;
 }
-
 
 .home .content {
   max-width: 50rem;
@@ -79,6 +122,7 @@ section {
   color: #333;
 }
 
+/* --- Search Button Position --- */
 .btn {
   display: inline-block;
   margin-top: 1rem;
@@ -90,6 +134,7 @@ section {
   font-size: 1.7rem;
 }
 
+/* --- Search Field --- */
 .search {
   margin-top: 1rem;
   border-radius: 5rem;
@@ -98,27 +143,37 @@ section {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
+/* --- Search Button Color --- */
+/*
+.home .btn-search {
+  background-color: rgb(60, 184, 116);
+}
+*/
+
 .btn:hover {
   background-color: rgb(60, 184, 116);
 }
 
 
 /* --- RECIPE RESULTS SECTION - MAIN PAGE --- */
-
-
 .heading {
   text-align: center;
   font-size: 4rem;
   color: #333;
   padding: 1rem;
   margin: 2rem;
-  background: rgba(51, 255, 75, 0.05)
+  background: rgba(51, 255, 75, 0.05);
 }
 
-.heading span {
-  color: green;
+/* --- Section Header Text --- */
+.heading {
+  margin: 15px;
+  font-family: 'Caveat Brush', cursive;
+  text-shadow: 0 2px rgba(0, 0, 0, .5);
 }
 
+
+/* RECIPE RESULTS SECTION */
 .box-container {
   justify-content: center;
 }
@@ -204,25 +259,75 @@ section {
   color: #333;
 }
 
+
+/* --- Recipe Instructions Size */
 #box-container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
 }
+
+
+.recipes .box-container2 .titleElement {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Image Settings */
+.recipes .box-container2 .imageElement {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
+  height: auto;
+  border-radius: 8px;
+  border: 4px solid rgb(60, 184, 116);
+  margin-bottom: 30px;
+}
+
+.recipes .box-container2 .ingredientsTitle {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* Ingredients Text Settings */
+.recipes .box-container2 .ingredientsElement {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+/* Instructions Text Settings */
+.recipes .box-container2 .instructionsElement {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+/* --- COCKTAIL SECTION --- */
+.cocktail {
+  margin-top: 120px;
+}
+
 
 /* --- TIPPS SECTION - MAIN PAGE --- */
 
-.textbox {
-  /*filter:brightness(0.7);*/
-}
 
 /* --- Log In Page --- */
 
 .form-label {
   font-size: 15px;
 }
-
-
 
 /* --- FOOTER --- */
 

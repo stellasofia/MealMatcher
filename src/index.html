@@ -9,6 +9,10 @@
   <!-- font awsome cdn link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+
   <!-- custom css file link -->
   <link rel="stylesheet" href="public/css/styles.css">
 
@@ -22,10 +26,11 @@
 
 <body>
 
+  <!-- NAV BAR -->
   <header>
-
     <nav class="navbar navbar-expand fixed-top fs-3 flex-column">
-      <a class="navbar-brand mx-auto" href="index.html"><img src="img/mealmatcher banner.jpg" width="200"></a>
+      <a class="navbar-brand mx-auto" href="index.html"><img src="img/mealmatcher_banner-removebg-preview.png"
+          width="200"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -45,50 +50,71 @@
           </ul>
 
         </div>
-        <div class="the-blur"></div>
       </div>
+      <div class="the-blur"></div>
     </nav>
-
   </header>
 
-  <!-- home section -->
-
+  <!-- HOME SECTION -->
   <section class="home" id="home">
-
     <div class="jumbotron">
-      <!-- <h3>Find a Recipe</h3> -->
-
-      <h1 class="mb-3 ">Find a Recipe</h1>
-
+      <h1 class="recipe-text">Find a Recipe</h1>
       <form>
         <input class="search" id="search" type="text" name="query" placeholder="  ">
       </form>
-
-      <a class="btn btn-success btn-lg" onclick="searchRecipe()" role="button">Search Recipe</a>
-
+      <a class="btn btn-lg btn-success btn-search" onclick="searchRecipe()" role="button">Search Recipe</a>
     </div>
-
   </section>
 
-
-
-  <!--  recipe section -->
-
+  <!--  RECIPE  RESULT SECTION -->
   <main class="recipes" id="recipes">
-    <h1 class="heading"> recipe <span>results</span> </h1>
 
-    <div class="box-container" id="box-container"></div>
+    <h1 class="heading"> recipe results</h1>
 
-    <h1 class="heading"> recipe <span>Instruction</span> </h1>
-    <div class="box-container2" id="box-container2"></div>
-
+    <div class="container py-5 h-100 textbox" style="background-color: rgb(60, 184, 116);">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-9 col-xl-7">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <figure class="text-center mb-0">
+                <blockquote class="blockquote">
+                  <p class="box-container" id="box-container"></p>
+                </blockquote>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </main>
 
 
-  <!--  tips section -->
+  <!-- RECIPE INSTRUCTION SECTION -->
+  <section class="recipes" id="recipes">
+    <h1 class="heading"> recipe Instruction</h1>
+
+    <div class="container py-5 h-100 textbox" style="background-color: rgb(60, 184, 116);">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-9 col-xl-7">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <figure class="text-center mb-0">
+                <blockquote class="blockquote">
+                  <p class="box-container2" id="box-container2"></p>
+                </blockquote>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--  TIPS SECTION -->
   <section class="tips" id="tips"">
-    <h1 class=" heading"> recipe <span>Facts</span> </h1>
+    <h1 class=" heading"> food facts</h1>
     <div class="container py-5 h-100 textbox" style="background-color: rgb(60, 184, 116);">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-lg-9 col-xl-7">
@@ -113,25 +139,19 @@
     </div>
   </section>
 
-  <!--  cocktail section -->
+  <!-- COCKTAILS SECTION -->
 
   <section class="cocktail" id="cocktail">
-    <h1 class="heading"> cocktail <span>company</span> </h1>
+    <h1 class="heading"> cocktail company</h1>
 
-    <div class="box-container" id="box-container">
-      <a class="btn btn-success btn-lg" href="cocktail.html" role="button">A COCKTAIL TO ACCOMPANY YOUR MEAL</a>
-
+    <div class="box-container-cocktail" id="box-container-cocktail">
+      <a class="btn btn-lg btn-success btn-search-cocktail" onclick="redirectToCocktail()" role="button">want a coocktail to go with your meal?</a>
 
     </div>
-
   </section>
 
 
-
-
-
-  <!-- footer section -->
-
+  <!-- FOOTER SECTION -->
   <div class="container">
     <footer class="py-5">
       <div class="row">
