@@ -78,6 +78,8 @@ app.put("/recipeInfo", function (req, res) {
 
 app.post("/addFavorite", async (req, res) => {
   favorites[req.body.id] = req.body;
+  console.log("added");
+  res.sendStatus(200);
 })
 
 app.delete("/deleteFavorite", async (req, res) => {

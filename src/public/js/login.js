@@ -36,3 +36,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+
+    const favoritesButton = document.querySelector(".fa-heart");
+    if(favoritesButton){
+        favoritesButton.addEventListener("click", handleFavoritesClick);
+    }
+});
+

@@ -39,3 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
         registerForm.dispatchEvent(new Event('submit'));
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const favoritesButton = document.querySelector(".fa-heart");
+    if(favoritesButton){
+        favoritesButton.addEventListener("click", handleFavoritesClick);
+    }
+});

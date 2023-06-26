@@ -72,3 +72,17 @@ function deleteFavorite(recipe) {
   window.onload = function() {
     renderFavorties()
   }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sessionId = getCookie("session");
+  if (sessionId) {
+    toggleLoginLogoutButton(true);
+  } else {
+    toggleLoginLogoutButton(false);
+  }
+
+  const favoritesButton = document.querySelector(".fa-heart");
+  if(favoritesButton){
+    favoritesButton.addEventListener("click", handleFavoritesClick);
+  }
+});
