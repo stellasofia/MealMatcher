@@ -12,9 +12,22 @@ function deleteFavorite(recipe) {
         article.remove()
       })
   }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sessionId = getCookie("session");
+  if (sessionId) {
+    toggleLoginLogoutButton(true);
+  } else {
+    toggleLoginLogoutButton(false);
+  }
+
+  const favoritesButton = document.querySelector(".fa-heart");
+  if(favoritesButton){
+    favoritesButton.addEventListener("click", handleFavoritesClick);
+  }
+});
   
-  
-  function renderFavorties() {
+  function renderFavorites() {
     fetch(`/favorites`)
       .then(response => response.json())
       .then(favorites => {
@@ -70,19 +83,6 @@ function deleteFavorite(recipe) {
   }
 
   window.onload = function() {
-    renderFavorties()
+    renderFavorites()
   }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const sessionId = getCookie("session");
-  if (sessionId) {
-    toggleLoginLogoutButton(true);
-  } else {
-    toggleLoginLogoutButton(false);
-  }
-
-  const favoritesButton = document.querySelector(".fa-heart");
-  if(favoritesButton){
-    favoritesButton.addEventListener("click", handleFavoritesClick);
-  }
-});

@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cc17e3f-196e-4a6c-a47e-b6d993796a96" name="Changes" comment="v.8 - Login,Registration working">
-      <change afterPath="$PROJECT_DIR$/src/public/js/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cocktail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/cocktail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/favorites.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/public/js/favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/favorites.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

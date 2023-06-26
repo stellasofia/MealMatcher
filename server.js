@@ -54,7 +54,7 @@ app.get("/recipeInfo", async (req, res) => {
 */
 
 
-/*
+
 app.get("/favorites", async (req, res) => {
   res.send(favorites)
 })
