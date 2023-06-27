@@ -315,6 +315,10 @@ section {
 }
 
 /* --- COCKTAIL SECTION --- */
+.cocktail-html {
+  margin-top: 140px;
+}
+
 .cocktail {
   margin-top: 10px;
 }
