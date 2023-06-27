@@ -40,7 +40,7 @@ npm start
 
 12. open you web browser and visit `http://localhost:3001` to access MealMatcher
 
-##Technologies Used
+## Technologies Used
 Node.js
 Express.js
 HTML
@@ -51,9 +51,9 @@ MealMatcher utilizes the Spoonacular API to retrieve recipe data. The API allows
 
 ## Authors
 
-- [@Stella Gross](https://github.com/GoekmenKiyan)
-- [@Gökmen Kiyan](https://github.com/stellasofia)
+- [@Stella Gross](https://github.com/stellasofia)
 - [@Richard Libres](https://github.com/bjugoy)
+- [@Gökmen Kiyan](https://github.com/GoekmenKiyan)
 
 
 ## License
