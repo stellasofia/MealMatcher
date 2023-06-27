@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font awsome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="./styles.css">
+
+    <script src="./index.js"></script>
+</head>
+
+<body>
+
+    <!--  TIPS SECTION -->
+    <section class="tips" id="tips">
+        <h1 class=" heading"> food facts</h1>
+        <div class="container py-5 h-100 textbox" style="background-color: rgb(60, 184, 116);">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-lg-9 col-xl-7">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <div class="text-center mb-4 pb-2">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-quotes/bulb.webp"
+                                    alt="Bulb" width="100">
+                            </div>
+                            <figure class="text-center mb-0">
+                                <blockquote class="blockquote">
+                                    <p id="tipsParagraph" style="font-size: 17px;"></p>
+                                    <cite style="font-size: 15px;">
+                                        Gordon Ramsey
+                                    </cite>
+                                </blockquote>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--  FOOD JOKE SECTION -->
+    <section class="joke" id="joke">
+        <h1 class=" heading"> random food joke</h1>
+        <div class="container py-5 h-100 textbox" style="background-color: rgb(60, 184, 116);">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-lg-9 col-xl-7">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <div class="text-center mb-4 pb-2">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-quotes/bulb.webp"
+                                    alt="Bulb" width="100">
+                            </div>
+                            <figure class="text-center mb-0">
+                                <blockquote class="blockquote">
+                                    <p id="jokeParagraph" style="font-size: 17px;"></p>
+                                    <cite style="font-size: 15px;">
+                                        Gordon Ramsey
+                                    </cite>
+                                </blockquote>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- cocktail section-->
+    <main class="cocktail-html" id="cocktail-html">
+
+        <h1 class="heading"> delicious cocktail recipe</h1>
+
+        <div class="box-container-cocktail" id="box-container-cocktail">
+            <a class="btn btn-lg btn-success btn-search-cocktail" onclick="getRandomCocktail()" role="button">want a
+                cocktail to go
+                with your meal?</a>
+
+        </div>
+    </main>
+
+
+    <section class="recipe" id="recipe">
+        <div id="recipeContainer"></div>
+    </section>
+
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+body {
+    background-color: cadetblue;
+}
+
+/* --- RECIPE RESULTS SECTION - MAIN PAGE --- */
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    padding: 1rem;
+    margin: 2rem;
+    background: rgba(206, 175, 39, 0.63);
+}
+
+/* --- Section Header Text --- */
+.heading {
+    margin: 15px;
+    font-family: 'Caveat Brush', cursive;
+    text-shadow: 0 2px rgba(0, 0, 0, .5);
+}
+
+/* --- COCKTAIL SECTION --- */
+.cocktail-html {
+    margin-top: 140px;
+}
+
+.cocktail {
+    margin-top: 10px;
+}
+
+#box-container-cocktail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.box-container-cocktail .titleElement {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Image Settings */
+.box-container-cocktail .imageElement {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+    height: auto;
+    border-radius: 8px;
+    border: 4px solid rgb(60, 184, 116);
+    margin-bottom: 30px;
+}
+
+.box-container-cocktail .ingredientsTitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* Ingredients Text Settings */
+.box-container-cocktail .ingredientsElement {
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+
+/* Instructions Text Settings */
+.box-container-cocktail .instructionsElement {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+}

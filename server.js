@@ -5,6 +5,7 @@ const path = require("path");
 const http = require("http");
 const bcrypt = require('bcrypt'); // password encryptionn
 const cookieParser = require('cookie-parser')
+const cors = require('cors');
 
 const axios = require('axios');
 const key_api = 'ff9c2c48de514451bba22bb3017484c5'
@@ -18,6 +19,7 @@ const req = require('express/lib/request');
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "src")));
 app.use(cookieParser());
+app.use(cors());
 
 
 
@@ -30,16 +32,15 @@ app.get('/', (req, res) => {
 app.get('/recipes', async (req, res) => {
   const query = req.query.query;
   console.log(query);
-  const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=16&apiKey=${key_api}`);
+  const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=16&apiKey=${key_api2}`);
   const recipes = response.data.results;
   res.send(recipes);
-
 });
 
 // --- RECIPE SEARCH --- //
 app.get('/recipes/:recipeId', async (req, res) => {
   const { recipeId } = req.params;
-  const apiUrl = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${key_api3}`;
+  const apiUrl = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${key_api2}`;
 
   fetch(apiUrl)
     .then(response => response.json())
@@ -52,27 +53,24 @@ app.get('/recipes/:recipeId', async (req, res) => {
     });
 })
 
+// --- RANDOM FOOD JOKE --- //
+app.get('/random-joke', async (req, res) => {
+  axios.get(`https:www.api.spoonacular.com/food/jokes/random?apiKey=${key_api2}`)
+    .then(response => {
+      const foodJoke = response.data.text;
+      res.send(foodJoke);
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).send('Error retrieving food joke');
+    });
+});
+
 
 app.get("/favorites", async (req, res) => {
   res.send(favorites)
 })
-/*
 
-app.get("/recipeInfo", function (req, res) {
-  const id = req.body.id;
-  res.send(favorites[id]);
-})
-
-app.put("/recipeInfo", function (req, res) {
-  const id = req.body.id
-  favorites[id] = req.body;
-
-  res.status(201);
-  res.send(req.body.title);
-
-});
-
-*/
 
 app.post("/addFavorite", async (req, res) => {
   favorites[req.body.id] = req.body;
@@ -128,7 +126,7 @@ app.get('/cocktail-details/:id', async (req, res) => {
 
 // --- TIPS --- //
 app.get('/tips', (req, res) => {
-  axios.get(`https://api.spoonacular.com/food/trivia/random?apiKey=${key_api}`)
+  axios.get(`https://api.spoonacular.com/food/trivia/random?apiKey=${key_api2}`)
     .then(response => {
       const cookingTip = response.data.text;
       res.send(cookingTip);
@@ -138,8 +136,6 @@ app.get('/tips', (req, res) => {
       res.status(500).send('Error retrieving cooking tip');
     });
 });
-
-// --- COCKTAIL --- //
 
 
 // --- SESSION MANAGEMENT ---

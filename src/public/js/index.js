@@ -184,7 +184,10 @@ function getTips() {
   fetch('/tips') // Replace with your API endpoint
     .then(response => response.text())
     .then(data => {
-      document.getElementById('tipsParagraph').textContent = data;
+      var element = document.getElementById('tipsParagraph') //
+      if (element) {                                         // https://stackoverflow.com/questions/54876761/typeerror-cannot-set-property-textcontent-of-null
+        element.textContent = data;                          //
+      }
     })
     .catch(error => {
       console.error('Failed to fetch data:', error);
