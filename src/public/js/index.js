@@ -163,24 +163,16 @@ document.addEventListener('click', event => {
   }
 });
 
+
 // --- COCKTAL SEARCH --- //
 function getRandomCocktail() {
-  fetch(`/random-cocktail`)
+  fetch('/random-cocktail')
     .then(response => response.json())
     .then(data => {
-      localStorage.setItem('cocktailDetails', JSON.stringify(data));
-      window.location.href = 'cocktail.html';
+      const cocktailId = data.drinks[0].idDrink;
+      window.location.href = `cocktail.html?id=${cocktailId}`;
     });
 }
-
-document.addEventListener('click', event => {
-  if (event.target.matches('.btn-search-cocktail')) {
-    const cocktailId = event.target.closest('.box').id;
-    getCocktailDetails(cocktailId);
-  }
-});
-
-
 
 // --- TIPS SECTION --- //
 

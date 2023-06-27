@@ -112,6 +112,20 @@ app.get('/random-cocktail', async (req, res) => {
     });
 });
 
+app.get('/cocktail-details/:id', async (req, res) => {
+  const cocktailId = req.params.id;
+  axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`)
+    .then(response => {
+      const data = response.data;
+      res.send({ cocktailDetails: data.drinks[0] });
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(500).send('Fehler beim Abrufen der Cocktaildetails');
+    });
+});
+
+
 // --- TIPS --- //
 app.get('/tips', (req, res) => {
   axios.get(`https://api.spoonacular.com/food/trivia/random?apiKey=${key_api}`)
