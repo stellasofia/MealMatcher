@@ -11,15 +11,15 @@ function addFavorite(recipe) {
         },
         body: JSON.stringify(recipe)
       }).then(response => {
-          if(response.ok) {
-              const recipeContainer = document.getElementById(recipe.id)
-              recipeContainer.remove()
-          } else {
-              console.error("failed", response.status);
-          }
+        if (response.ok) {
+          const recipeContainer = document.getElementById(recipe.id)
+          recipeContainer.remove()
+        } else {
+          console.error("failed", response.status);
+        }
       }).catch(error => {
         console.error('Failed to add favorite:', error);
-    });
+      });
 
   } else {
     // Session doesn't exist, redirect to login.html
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const favoritesButton = document.querySelector(".fa-heart");
-  if(favoritesButton){
+  if (favoritesButton) {
     favoritesButton.addEventListener("click", handleFavoritesClick);
   }
 });
@@ -107,61 +107,22 @@ function searchRecipe() {
 
 // --- RECIPE SEARCH --- //
 
-function getRecipeDetails(recipeId) {
-  fetch(`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=de7eb05287aa4681a5a7224d5d7527c8`)
+function getRandomCocktail() {
+  fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
     .then(response => response.json())
     .then(data => {
-
-      const mainElement = document.getElementById("box-container2");
-      // Löscht vorhandene Inhalte des mainElement
-      mainElement.innerHTML = '';
-
-      const titleElement = document.createElement("h2");
-      titleElement.className = "titleElement";
-      titleElement.textContent = data.title;
-      mainElement.appendChild(titleElement);
-
-      const imageElement = document.createElement("img");
-      imageElement.className = "imageElement";
-      imageElement.src = data.image;
-      mainElement.appendChild(imageElement);
-
-      const ingredientsElement = document.createElement("div");
-      ingredientsElement.className = "ingredientsElement";
-      mainElement.appendChild(ingredientsElement);
-
-      const ingredientsTitle = document.createElement("h3");
-      ingredientsTitle.className = "ingredientsTitle"
-      ingredientsTitle.textContent = "Ingredients:";
-      ingredientsElement.appendChild(ingredientsTitle);
-
-      const ulElement = document.createElement("ul");
-      ingredientsElement.appendChild(ulElement);
-
-      data.extendedIngredients.forEach(ingredient => {
-        const liElement = document.createElement("li");
-        liElement.textContent = ingredient.original;
-        ulElement.appendChild(liElement);
-      });
-
-      const instructionsElement = document.createElement("div");
-      instructionsElement.className = "instructionsElement";
-      mainElement.appendChild(instructionsElement);
-
-      data.analyzedInstructions[0].steps.forEach(step => {
-        const stepElement = document.createElement("p");
-        stepElement.textContent = step.step;
-        instructionsElement.appendChild(stepElement);
-      });
+      localStorage.setItem('cocktailDetails', JSON.stringify(data));
+      window.location.href = 'cocktail.html';
     });
-};
+}
 
 document.addEventListener('click', event => {
-  if (event.target.matches('.getDetails-btn')) {
-    const recipeId = event.target.closest('.box').id;
-    getRecipeDetails(recipeId);
+  if (event.target.matches('.btn-search-cocktail')) {
+    const cocktailId = event.target.closest('.box').id;
+    getCocktailDetails(cocktailId);
   }
 });
+
 
 
 // --- TIPS SECTION --- //
@@ -181,6 +142,3 @@ function getTips() {
       document.getElementById('tipsParagraph').textContent = 'Failed to fetch data.';
     });
 }
-
-
-// --- COCKTAIL SECTION --- //
