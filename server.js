@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser')
 const axios = require('axios');
 const key_api = 'ff9c2c48de514451bba22bb3017484c5'
 const key_api2 = 'b9626a5b5716476da85bed6e7fba5387'
+const key_api3 = 'de7eb05287aa4681a5a7224d5d7527c8'
 
 
 const bodyParser = require("body-parser");
@@ -25,7 +26,7 @@ app.get('/', (req, res) => {
 });
 
 
-// --- 
+// --- RECIPE LIST --- ///
 app.get('/recipes', async (req, res) => {
   const query = req.query.query;
   console.log(query);
@@ -35,24 +36,21 @@ app.get('/recipes', async (req, res) => {
 
 });
 
-app.get('/instructions/:id', async (req, res) => {
-  const id = req.params.id;
-  const response = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${key_api}`);
-  const instructions = response.data;
-  res.send(instructions);
-});
+// --- RECIPE SEARCH --- //
+app.get('/recipes/:recipeId', async (req, res) => {
+  const { recipeId } = req.params;
+  const apiUrl = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${key_api3}`;
 
-
-
-/*
-app.get("/recipeInfo", async (req, res) => {
-  const id = req.query.id;
-  const response = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${key_api}`);
-  const recipeInfo = response.data;
-  res.send(recipeInfo);
-});
-*/
-
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      res.send(data);
+    })
+    .catch(error => {
+      console.log('Error:', error);
+      res.status(500).json({ error: 'An error occurred' });
+    });
+})
 
 
 app.get("/favorites", async (req, res) => {
@@ -99,6 +97,20 @@ app.put("/updateRecipeInfo", async (req, res) => {
 
   res.sendStatus(200)
 })
+
+
+// --- COCKTAILS --- //
+app.get('/random-cocktail', async (req, res) => {
+  axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+    .then(response => {
+      const data = response.data;
+      res.send(data);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(500).send('Fehler beim Abrufen des Cocktails');
+    });
+});
 
 // --- TIPS --- //
 app.get('/tips', (req, res) => {

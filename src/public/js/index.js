@@ -107,8 +107,65 @@ function searchRecipe() {
 
 // --- RECIPE SEARCH --- //
 
+function getRecipeDetails(recipeId) {
+  fetch(`/recipes/${recipeId}`)
+    .then(response => response.json())
+    .then(data => {
+
+      const mainElement = document.getElementById("box-container2");
+      // Löscht vorhandene Inhalte des mainElement
+      mainElement.innerHTML = '';
+
+      const titleElement = document.createElement("h2");
+      titleElement.className = "titleElement";
+      titleElement.textContent = data.title;
+      mainElement.appendChild(titleElement);
+
+      const imageElement = document.createElement("img");
+      imageElement.className = "imageElement";
+      imageElement.src = data.image;
+      mainElement.appendChild(imageElement);
+
+      const ingredientsElement = document.createElement("div");
+      ingredientsElement.className = "ingredientsElement";
+      mainElement.appendChild(ingredientsElement);
+
+      const ingredientsTitle = document.createElement("h3");
+      ingredientsTitle.className = "ingredientsTitle"
+      ingredientsTitle.textContent = "Ingredients:";
+      ingredientsElement.appendChild(ingredientsTitle);
+
+      const ulElement = document.createElement("ul");
+      ingredientsElement.appendChild(ulElement);
+
+      data.extendedIngredients.forEach(ingredient => {
+        const liElement = document.createElement("li");
+        liElement.textContent = ingredient.original;
+        ulElement.appendChild(liElement);
+      });
+
+      const instructionsElement = document.createElement("div");
+      instructionsElement.className = "instructionsElement";
+      mainElement.appendChild(instructionsElement);
+
+      data.analyzedInstructions[0].steps.forEach(step => {
+        const stepElement = document.createElement("p");
+        stepElement.textContent = step.step;
+        instructionsElement.appendChild(stepElement);
+      });
+    });
+};
+
+document.addEventListener('click', event => {
+  if (event.target.matches('.getDetails-btn')) {
+    const recipeId = event.target.closest('.box').id;
+    getRecipeDetails(recipeId);
+  }
+});
+
+// --- COCKTAL SEARCH --- //
 function getRandomCocktail() {
-  fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
+  fetch(`/random-cocktail`)
     .then(response => response.json())
     .then(data => {
       localStorage.setItem('cocktailDetails', JSON.stringify(data));
