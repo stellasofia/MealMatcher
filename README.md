@@ -12,6 +12,7 @@ Save and share: Save recipes for offline access or share them with friends and f
 ## Installation
 
 1.Ensure you have Node.js installed on your system.
+
 2.Clone this repository using the following command:
 ```git
 git clone https://github.com/stellasofia/mealmatcher.git
@@ -21,10 +22,12 @@ git clone https://github.com/stellasofia/mealmatcher.git
 ```git
 cd mealmatcher
 ```
+
 5. Install the required dependencies:
 ```npm
 npm install
 ```
+
 8. Obtain an API key froma  recipe provider (e.g., SpoonacularAPI) and add it to the server.js file:
 ```javascript
 const key_api = 'YOUR_API_KEY'
