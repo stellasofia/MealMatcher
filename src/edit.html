@@ -2,36 +2,74 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- font awsome cdn link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- font awsome cdn link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- custom css file link -->
-    <link rel="stylesheet" href="public/css/styles.css">
+  <!-- custom css file link -->
+  <link rel="stylesheet" href="public/css/styles.css">
 
-    <script src="public/js/edit.js"></script>
 
-    <title>edit recipe</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <script src="public/js/edit.js"></script>
+
+  <title>edit recipe</title>
 </head>
 
 <body>
 
-    <form>
-        <input type="hidden" id="id" />
-        <div>
-          <label for="title">Title</label><input type="text" id="title" />
+  <!-- header section -->
+
+  <header>
+    <nav class="navbar navbar-expand navbar-light fs-3 flex-column">
+      <a class="navbar-brand mx-auto" href="index.html"><img src="img/mealmatcher_banner-removebg-preview.png"
+          width="200"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="index.html#recipes">Recipes</a>
+          <a class="nav-link" href="index.html#tipps">Tipps</a>
+
+          <!-- Icons -->
+          <ul class="navbar-nav d-flex flex-row me-1 fs-3">
+            <li class="nav-item me-3 me-lg-1">
+              <a class="nav-link" href="favorites.html"><i class="fa-solid fa-heart"></i></a>
+            </li>
+          </ul>
+
         </div>
-        <div>
-          <label for="image">Image</label><input type="text" id="image" />
-        </div>
-        <div>
-          <button type="button" onclick="putRecipe()">Save</button>
-          <button type="button" onclick="location.href = 'index.html'">Cancel</button>
-        </div>
-      </form>
+      </div>
+      <div class="the-blur"></div>
+    </nav>
+  </header>
+
+  <form class="edit-form">
+    <input type="hidden" id="id" />
+
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" />
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input type="text" class="form-control" id="image" />
+    </div>
+
+    <div class="form-group">
+      <button type="button" class="btn btn-success btn-save" onclick="putRecipe()">Save</button>
+      <button type="button" class="btn btn-danger btn-cancel" onclick="location.href = 'index.html'">Cancel</button>
+    </div>
+  </form>
 
 </body>
 
