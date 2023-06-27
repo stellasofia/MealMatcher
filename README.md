@@ -16,7 +16,7 @@ Whether you're a seasoned chef or a cooking newbie, MealMatcher will assist you 
 
 1. Ensure you have Node.js installed on your system.
 
-2 .Clone this repository using the following command:
+2. Clone this repository using the following command:
 ```git
 git clone https://github.com/stellasofia/mealmatcher.git
 ```
@@ -44,13 +44,13 @@ npm start
 12. open you web browser and visit `http://localhost:3001` to access MealMatcher
 
 ## Technologies Used
-Node.js
-Express.js
-HTML
-CSS - including Bootstrap
-JavaScript
-API
-MealMatcher utilizes the Spoonacular API to retrieve recipe data. The API allows searching for recipes based on various parameters such as ingredients, cuisine, and more.
+- Node.js
+- Express.js
+- HTML
+- CSS - including Bootstrap
+- JavaScript
+- API
+- MealMatcher utilizes the Spoonacular API to retrieve recipe data. The API allows searching for recipes based on various parameters such as ingredients, cuisine, and more.
 
 ## Authors
 
