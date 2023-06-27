@@ -11,6 +11,7 @@ const axios = require('axios');
 const key_api = 'ff9c2c48de514451bba22bb3017484c5'
 const key_api2 = 'b9626a5b5716476da85bed6e7fba5387'
 const key_api3 = 'de7eb05287aa4681a5a7224d5d7527c8'
+const key_api4 = '5ae723e46cfd4edb827ab16603a03d0b'
 
 
 const bodyParser = require("body-parser");
@@ -32,7 +33,7 @@ app.get('/', (req, res) => {
 app.get('/recipes', async (req, res) => {
   const query = req.query.query;
   console.log(query);
-  const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=16&apiKey=${key_api2}`);
+  const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=16&apiKey=${key_api3}`);
   const recipes = response.data.results;
   res.send(recipes);
 });
@@ -40,7 +41,7 @@ app.get('/recipes', async (req, res) => {
 // --- RECIPE SEARCH --- //
 app.get('/recipes/:recipeId', async (req, res) => {
   const { recipeId } = req.params;
-  const apiUrl = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${key_api2}`;
+  const apiUrl = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${key_api3}`;
 
   fetch(apiUrl)
     .then(response => response.json())
@@ -55,7 +56,7 @@ app.get('/recipes/:recipeId', async (req, res) => {
 
 // --- RANDOM FOOD JOKE --- //
 app.get('/random-joke', async (req, res) => {
-  axios.get(`https:www.api.spoonacular.com/food/jokes/random?apiKey=${key_api2}`)
+  axios.get(`https://api.spoonacular.com/food/jokes/random?apiKey=${key_api3}`)
     .then(response => {
       const foodJoke = response.data.text;
       res.send(foodJoke);
@@ -126,7 +127,7 @@ app.get('/cocktail-details/:id', async (req, res) => {
 
 // --- TIPS --- //
 app.get('/tips', (req, res) => {
-  axios.get(`https://api.spoonacular.com/food/trivia/random?apiKey=${key_api2}`)
+  axios.get(`https://api.spoonacular.com/food/trivia/random?apiKey=${key_api3}`)
     .then(response => {
       const cookingTip = response.data.text;
       res.send(cookingTip);

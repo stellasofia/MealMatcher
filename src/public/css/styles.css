@@ -19,7 +19,6 @@ html {
 
 .heading {
   font-size: 3rem;
-
 }
 
 
@@ -58,8 +57,8 @@ section {
   padding: 2rem 9%;
 }
 
-
 .home .recipe-text {
+  font-size: 25px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, sans-serif;
   background-color: #fff;
   font-weight: bold;
@@ -294,7 +293,7 @@ section {
 }
 
 
-.recipes .box-container2 .titleElement {
+.recipes2 .box-container2 .titleElement {
   font-size: 40px;
   font-weight: bold;
   text-align: center;
@@ -302,7 +301,7 @@ section {
 }
 
 /* Image Settings */
-.recipes .box-container2 .imageElement {
+.recipes2 .box-container2 .imageElement {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -313,13 +312,13 @@ section {
   margin-bottom: 30px;
 }
 
-.recipes .box-container2 .ingredientsTitle {
+.recipes2 .box-container2 .ingredientsTitle {
   font-size: 20px;
   margin-bottom: 15px;
 }
 
 /* Ingredients Text Settings */
-.recipes .box-container2 .ingredientsElement {
+.recipes2 .box-container2 .ingredientsElement {
   font-size: 20px;
   text-align: center;
   padding: 10px;
@@ -329,7 +328,7 @@ section {
 }
 
 /* Instructions Text Settings */
-.recipes .box-container2 .instructionsElement {
+.recipes2 .box-container2 .instructionsElement {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
