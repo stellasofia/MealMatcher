@@ -9,10 +9,14 @@ User-friendly interface: Enjoy a clean and intuitive interface that makes it eas
 Favorite recipes: Mark your favorite recipes to quickly access them later and keep track of the ones you love.
 Save and share: Save recipes for offline access or share them with friends and family.
 
+
 ##Installation
 
 1.Ensure you have Node.js installed on your system.
-2.Clone this repository using the following command: git clone https://github.com/stellasofia/mealmatcher.git
+2.Clone this repository using the following command:
+```git
+git clone https://github.com/stellasofia/mealmatcher.git
+```
 3. Navigate to the project directory: cd mealmatcher
 4. Install the required dependencies: npm install
 5. Obtain an API key froma  recipe provider (e.g., SpoonacularAPI) and add it to the server.js file: const key_api = 'YOUR_API_KEY'
@@ -33,6 +37,7 @@ MealMatcher utilizes the Spoonacular API to retrieve recipe data. The API allows
 - [@Stella Gross](https://github.com/GoekmenKiyan)
 - [@Gökmen Kiyan](https://github.com/stellasofia)
 - [@Richard Libres](https://github.com/bjugoy)
+
 
 ##License
 This project is licensed under the MIT License.
