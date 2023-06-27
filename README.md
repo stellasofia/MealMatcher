@@ -1,6 +1,6 @@
 # MealMatcher
 
-![mealmatcher_banner-removebg-preview](https://github.com/stellasofia/MealMatcher/assets/114345541/8549e964-46c8-46bf-9986-155445367371)
+<img src="https://github.com/stellasofia/MealMatcher/assets/114345541/8549e964-46c8-46bf-9986-155445367371" width="300">
 
 MealMatcher is a web application built with Node.js that helps you find delicious recipes and provides step-by-step instructions to cook them. Whether you're a seasoned chef or a cooking newbie, MealMatcher will assist you in discovering new and exciting meals to try.
 
