@@ -77,17 +77,23 @@
                                         <h4 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your
                                             account</h4>
 
+                                        <p id="usernameErrorMessage" class="username-error-message"></p>
+
+
                                         <div class="form-outline mb-4">
                                             <input type="username" id="form2Example17"
                                                 class="form-control form-control-lg" />
                                             <label class="form-label" for="form2Example17">Username</label>
                                         </div>
 
+                                        <p id="passwordErrorMessage" class="password-error-message"></p>
+
                                         <div class="form-outline mb-4">
                                             <input type="password" id="form2Example27"
                                                 class="form-control form-control-lg" />
                                             <label class="form-label" for="form2Example27">Password</label>
                                         </div>
+
 
                                         <div class="pt-1 mb-4">
                                             <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
@@ -96,6 +102,7 @@
                                         <a class="h4 text-muted" href="#!">Forgot password?</a>
                                         <p class="h4 mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a
                                                 href="register.html" style="color: #393f81;">Register here</a></p>
+
                                     </form>
 
                                 </div>
@@ -152,4 +159,5 @@
   </div>
 
     <script src="public/js/login.js"></script>
+    <script src="public/js/utils.js"></script>
 </body>

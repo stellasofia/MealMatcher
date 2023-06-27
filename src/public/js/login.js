@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-    if (document.querySelector('#form2Example17')) { //code läuft nur in login page(sonst error in favorites page)
+    if (document.querySelector('#form2Example17')) {
         const loginButton = document.querySelector('.btn-dark');
-        loginButton.addEventListener('click', async function(event) {
+        loginButton.addEventListener('click', function(event) {
             event.preventDefault();
 
             // Get the username and password values from the form
@@ -10,30 +9,31 @@ document.addEventListener('DOMContentLoaded', function() {
             const password = document.querySelector('#form2Example27').value;
 
             // Send a POST request to the server to perform the login
-            try {
-                const response = await fetch('/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ username, password }),
-                });
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            })
+                .then(function(response) {
+                    if (response.ok) {
+                        // Login successful
+                        window.location.href = 'index.html'; // Redirect to the home page
+                    } else {
+                        // Login failed
+                        response.json().then(function(errorResponse) {
+                            const { usernameError, passwordError } = errorResponse;
 
-                if (response.ok) {
-                    // Login successful
-                    window.location.href = 'index.html'; // Redirect to the home page
-                } else {
-                    // Login failed
-                    const error = await response.text();
-                    console.error(error);
-                }
-            } catch (error) {
-                console.error('An error occurred during login:', error);
-            }
+                            showError(usernameError, passwordError);
+                        });
+                    }
+                })
+                .catch(function(error) {
+                    console.error('An error occurred during login:', error);
+                });
         });
     }
-
-
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -44,3 +44,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+function showError(usernameErrorMessage, passwordErrorMessage) {
+    const usernameErrorElement = document.querySelector('.username-error-message');
+    const passwordErrorElement = document.querySelector('.password-error-message');
+
+    usernameErrorElement.textContent = usernameErrorMessage;
+    passwordErrorElement.textContent = passwordErrorMessage;
+
+    usernameErrorElement.style.color = 'red';
+    passwordErrorElement.style.color = 'red';
+}

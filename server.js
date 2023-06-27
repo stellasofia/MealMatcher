@@ -7,8 +7,8 @@ const bcrypt = require('bcrypt'); // password encryptionn
 const cookieParser = require('cookie-parser')
 
 const axios = require('axios');
-const key_api2 = 'ff9c2c48de514451bba22bb3017484c5'
-const key_api = 'b9626a5b5716476da85bed6e7fba5387'
+const key_api = 'ff9c2c48de514451bba22bb3017484c5'
+const key_api2 = 'b9626a5b5716476da85bed6e7fba5387'
 
 
 const bodyParser = require("body-parser");
@@ -78,7 +78,6 @@ app.put("/recipeInfo", function (req, res) {
 
 app.post("/addFavorite", async (req, res) => {
   favorites[req.body.id] = req.body;
-  console.log("added");
   res.sendStatus(200);
 })
 
@@ -136,13 +135,13 @@ app.post("/login", async (req, res) => {
     const user = users.find((user) => user.username === username); //vergleicht usernames im user array
 
     if (!user) {
-      return res.status(401).send("Invalid username or password");
+      return res.status(401).json({ usernameError: "Username does not exist" });
     }
 
     const passwordMatch = await bcrypt.compare(password, user.hashedPassword);
 
     if (!passwordMatch) {
-      return res.status(401).send("Invalid username or password");
+      return res.status(401).json({ passwordError: "Invalid password" });
     }
 
     const existingSession = sessions.find((session) => session.userId === user.userId);

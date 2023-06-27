@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cc17e3f-196e-4a6c-a47e-b6d993796a96" name="Changes" comment="v.8 - Login,Registration working">
+    <list default="true" id="8cc17e3f-196e-4a6c-a47e-b6d993796a96" name="Changes" comment="v1.5 - favorites bug fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/favorites.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/js/favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/favorites.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +92,15 @@
       <workItem from="1687359700251" duration="13803000" />
       <workItem from="1687794198914" duration="488000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="v1.5 - favorites bug fixed">
+      <option name="closed" value="true" />
+      <created>1687823830860</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687823830860</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +132,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-v1.2" />
     <MESSAGE value="v.8 - Login,Registration working" />
-    <option name="LAST_COMMIT_MESSAGE" value="v.8 - Login,Registration working" />
+    <MESSAGE value="v1.5 - favorites bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.5 - favorites bug fixed" />
   </component>
 </project>
