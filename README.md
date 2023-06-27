@@ -15,7 +15,6 @@ Whether you're a seasoned chef or a cooking newbie, MealMatcher will assist you 
 ## Installation
 
 1. Ensure you have Node.js installed on your system.
-
 2 .Clone this repository using the following command:
 ```git
 git clone https://github.com/stellasofia/mealmatcher.git
