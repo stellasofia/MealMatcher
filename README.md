@@ -6,11 +6,11 @@ MealMatcher is a web application built with Node.js that helps you find deliciou
 Whether you're a seasoned chef or a cooking newbie, MealMatcher will assist you in discovering new and exciting meals to try.
 
 ## Features
-Recipe search: Browse through an extensive collection of recipes based on different cuisines, ingredients, or dietary preferences.
-Detailed instructions: Get comprehensive instructions for each recipe, including ingredient lists, cooking times, and step-by-step guides.
-User-friendly interface: Enjoy a clean and intuitive interface that makes it easy to search for recipes and navigate through the application.
-Favorite recipes: Mark your favorite recipes to quickly access them later and keep track of the ones you love.
-Save and share: Save recipes for offline access or share them with friends and family.
+- Recipe search: Browse through an extensive collection of recipes based on different cuisines, ingredients, or dietary preferences.
+- Detailed instructions: Get comprehensive instructions for each recipe, including ingredient lists, cooking times, and step-by-step guides.
+- User-friendly interface: Enjoy a clean and intuitive interface that makes it easy to search for recipes and navigate through the application.
+- Favorite recipes: Mark your favorite recipes to quickly access them later and keep track of the ones you love.
+- Save and share: Save recipes for offline access or share them with friends and family.
 
 ## Installation
 
