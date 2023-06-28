@@ -429,11 +429,24 @@ section {
 
 
 /* --- EDIT FORM --- */
-
-.form-group {
+.edit-form .form-control {
   max-width: 400px;
+  display: block;
+  margin-top: 5px;
+  font-size: 18px;
 }
 
+
+.edit-form {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 80px;
+  margin-left: 660px;
+}
+
+.btn-save {
+  margin-left: 140px;
+}
 
 /* --- Log In Page --- */
 
